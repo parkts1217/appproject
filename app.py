@@ -1,6 +1,5 @@
 import pandas as pd
 import streamlit as st
-
 try:
     import folium
     from streamlit.components.v1 import html
@@ -31,7 +30,7 @@ st.title("주말 인기 대여점 지도")
 st.caption(f"중심 좌표: {lat:.6f}, {lon:.6f}")
 
 if folium is not None and html is not None:
-    map3 = folium.Map(location=[lat, lon], zoom_start=11, tiles="CartoDB positron")
+    map3 = folium.Map(location=[lat, lon], zoom_start=11)
 
     for _, row in weekendpopular.iterrows():
         folium.Marker(
